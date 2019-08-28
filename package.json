@@ -1,0 +1,23 @@
+{
+  "name": "a-curving-bedtime-silencer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reb2039607/A-Curving-Bedtime-Silencer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reb2039607/A-Curving-Bedtime-Silencer/issues"
+  },
+  "homepage": "https://github.com/reb2039607/A-Curving-Bedtime-Silencer#readme",
+  "dependencies": {
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.16.0"
+  }
+}
