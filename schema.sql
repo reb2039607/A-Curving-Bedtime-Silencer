@@ -1,3 +1,5 @@
+ create DATABASE freelance; 
+
 # Table, Create TableTask,
  CREATE TABLE `Task` (
   `idtask` int(11) NOT NULL AUTO_INCREMENT,
