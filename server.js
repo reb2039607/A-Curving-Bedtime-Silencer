@@ -5,6 +5,7 @@ const express = require('express');
 const path = require('path');
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
+const db = require("./models");
 
 const PORT = process.env.PORT || 8080;
 
@@ -47,7 +48,18 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: false, save
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static("public"));
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+
+
+require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+require("./routes/login-routes.js")(app);
+
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+
+});
+

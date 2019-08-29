@@ -2,7 +2,7 @@
 const db = require("../models");
 
 module.exports = function(app) {
-
+/*
     app.get("/auth", function(req, res) {
         db.User.findOne({
             where: {
@@ -11,12 +11,12 @@ module.exports = function(app) {
             }
         }).then(function(user) {
             if (user) {
-                
+
             }
         });
-    });
+    });*/
 
-
+/*
 app.post('/auth', function(req, res) {
     const username = req.body.username;
     const password = req.body.password;
@@ -35,6 +35,6 @@ app.post('/auth', function(req, res) {
         res.send('Please enter Username and Password!');
         res.end();
     }
-});
+});*/
 
 }
