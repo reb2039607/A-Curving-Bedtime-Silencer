@@ -2,7 +2,7 @@
   "development": {
     "username": "process.env.username",
     "password": "process.env.password",
-    "database": "database_development",
+    "database": "process.env.db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
