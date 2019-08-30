@@ -13,6 +13,11 @@ app.get('/login',
   function(req, res){
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+
+  app.get('/signup',
+  function(req, res){
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
   
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login.html' }),
@@ -20,7 +25,7 @@ app.post('/login',
     res.redirect('/');
   });
 
-app.post("/login", function(req, res) {
+app.post("/signup", function(req, res) {
   db.User.create({
     username: req.body.username,
     password: req.body.password,
