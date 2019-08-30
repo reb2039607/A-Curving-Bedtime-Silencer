@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "process.env.username",
-    "password": "process.env.password",
-    "database": "process.env.db",
+    "username": "root",
+    "password": "password",
+    "database": "freelance",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
