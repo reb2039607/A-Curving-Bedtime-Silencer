@@ -102,6 +102,9 @@
             taskCreate.rewardpoints = $("#rewardpoints").val().trim();
             taskCreate.enddate = $("#enddate").val().trim();
             taskCreate.description = $("#description").val().trim();
+            taskCreate.taskstatus = "pending";
+            taskCreate.userid = 1;
+            // taskCreate.startdate = "2019-08-29";
 
             $.post("/api/createtasks/", taskCreate)
                 .then(function (response) {
