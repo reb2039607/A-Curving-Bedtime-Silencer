@@ -6,7 +6,7 @@ module.exports = function(app) {
 
 app.get('/',
   function(req, res) {
-    res.render('index.html', { user: req.user });
+    res.sendFile(path.join(__dirname, "../public/create-task.html"));
   });
 
 app.get('/login',
@@ -49,7 +49,7 @@ app.post('/auth', function(req, res) {
       if (response) {
           req.session.loggedin = true;
           req.session.username = username;
-          res.redirect('/');
+          res.redirect('/create-task.html');
       } else {
           res.send('Incorrect Username and/or Password!');
       }
