@@ -1,3 +1,4 @@
+
 const mysql = require('mysql');
 const express = require('express');
 // const session = require('express-session');
@@ -61,5 +62,10 @@ db.sequelize.sync().then(function() {
       console.log("App listening on PORT " + PORT);
     });
 
+});
+
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the Free Challenge App!");
 });
 
