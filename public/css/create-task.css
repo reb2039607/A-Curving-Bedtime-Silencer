@@ -7,13 +7,9 @@
 
 }
 
-/* .display {
-    text-align: center;
-} */
-
-/* .form-control{
-    margin-bottom: 10px;
-} */
+.card-header {
+    border-color: rgba(43, 43, 173, 0.795);
+}
 
 .card {
     border-style: solid;
@@ -25,8 +21,14 @@
     margin-right: 10px;
     margin-bottom: 10px;
     float: right;
+    background-color: rgba(43, 43, 173, 0.795);
+    border-color: rgba(43, 43, 173, 0.795);
 }
 
-.text-break {
-    overflow-wrap: break-word;
+.form-control {
+    border-color: rgba(43, 43, 173, 0.795);
+}
+
+.custom-select {
+    border-color: rgba(43, 43, 173, 0.795);
 }
