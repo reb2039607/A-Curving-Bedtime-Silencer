@@ -32,7 +32,7 @@ app.post("/signup", function(req, res) {
     email: req.body.email,
     fullname: req.body.fullname
   }).then(function(dbUser) {
-    res.redirect('/login');
+    res.redirect('/login.html');
   });
 });
 
@@ -49,7 +49,7 @@ app.post('/auth', function(req, res) {
       if (response) {
           req.session.loggedin = true;
           req.session.username = username;
-          res.redirect('/home');
+          res.redirect('/');
       } else {
           res.send('Incorrect Username and/or Password!');
       }
