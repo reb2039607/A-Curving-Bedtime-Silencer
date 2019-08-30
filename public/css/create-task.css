@@ -1,7 +1,27 @@
 .jumbotron {
-    border: 10px;
+    border-style: solid;
+    background-color: rgba(43, 43, 173, 0.795);
+    color: white;
+    margin: 0px 10% 20px 10%;
+    text-align: center;
 }
 
-.form-control{
+/* .display {
+    text-align: center;
+} */
+
+/* .form-control{
     margin-bottom: 10px;
+} */
+
+.card {
+    border-style: solid;
+    border-color: rgba(43, 43, 173, 0.795);
+    margin: 0px 10% 15px 10%;
+}
+
+.buttons {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    /* float: left; */
 }
