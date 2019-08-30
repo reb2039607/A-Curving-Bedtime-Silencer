@@ -8,6 +8,8 @@ const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
 const db = require("./models");
 
+require('dotenv').config()
+
 const PORT = process.env.PORT || 8080;
 
 passport.use(new Strategy(
