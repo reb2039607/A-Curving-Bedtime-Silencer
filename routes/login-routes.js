@@ -32,7 +32,6 @@ app.post("/signup", function(req, res) {
     email: req.body.email,
     fullname: req.body.fullname
   }).then(function(dbUser) {
-    res.json(dbUser);
     res.redirect('/login');
   });
 });
