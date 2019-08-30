@@ -7,6 +7,19 @@
 
 }
 
+#home {
+    float: right;
+    margin: 2px;
+}
+#logout {
+    float: right;
+    margin: 2px;
+}
+#username {
+    float: right;
+    margin: 2px;
+}
+
 .card-header {
     border-color: rgba(43, 43, 173, 0.795);
 }
