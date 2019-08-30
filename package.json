@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/reb2039607/A-Curving-Bedtime-Silencer#readme",
   "dependencies": {
-
     "body-parser": "^1.19.0",
     "connect-ensure-login": "^0.1.1",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "morgan": "^1.9.1",

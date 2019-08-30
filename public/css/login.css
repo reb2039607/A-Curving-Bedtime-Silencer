@@ -5,7 +5,7 @@
 }
 .login-form h1 {
     text-align: center;
-    color: #4d4d4d;
+    color: rgba(43, 43, 173, 0.795);;
     font-size: 24px;
     padding: 20px 0 20px 0;
 }
@@ -20,7 +20,7 @@
 .login-form input[type="submit"] {
     width: 100%;
     padding: 15px;
-    background-color: #535b63;
+    background-color: rgba(43, 43, 173, 0.795);
     border: 0;
     box-sizing: border-box;
     cursor: pointer;

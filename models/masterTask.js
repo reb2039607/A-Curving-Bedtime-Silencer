@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var masterTask = sequelize.define("masterTask", {
-    taskid: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true
-    },
+    // taskid: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   autoIncrement: true
+    // },
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     userid: {
-      type: DataTypes.INETGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     startdate: {
