@@ -6,15 +6,21 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Free-Lance | Login</title>
 	<link rel="stylesheet" href="css/login.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+
 </head>
 <body>
 	<div class="login-form">
 		<h1>Login</h1>
 		<form action="auth" method="POST">
-			<input type="text" name="username" placeholder="Username" required>
+			<input id="username" type="text" name="username" placeholder="Username" required>
 			<input type="password" name="password" placeholder="Password" required>
-			<input type="submit">
+			<input id="submit" type="submit">
 		</form>
 	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+	<script src="../js/app.js" type="text/javascript"></script>
+	
 </body>
 </html>
