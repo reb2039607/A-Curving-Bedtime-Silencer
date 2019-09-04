@@ -24,6 +24,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     taskstatus: {
       type: DataTypes.STRING,
+      defaultValue: "Pending",
       allowNull: false,
       validate: {
         len: [1, 10]

@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../public/css/create-task.css">
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -21,7 +20,7 @@
 
         <h1 class="display-4 font-weight-bold">Free-Lance-></h1>
         <a id="logout" href="url">Log Out</a>
-        <p id="username">username</p>
+        <p id="username" value="jogeskolla">username</p>
         <img id="home" src="../public/baseline_home_black_18dp.png" alt="Home" width="20" height="20">
     </div>
 
@@ -64,7 +63,7 @@
 
         <div class="card-body">
             End Date:
-            <input class="form-control" id="enddate" type="text" placeholder="End Date">
+            <input class="form-control" id="enddate" type="date" placeholder="End Date">
         </div>
 
         <div class="card-body">
@@ -75,15 +74,17 @@
         <p>*Please fill out all fields</p>
 
         <div class="div">
-            <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+            <button class="btn btn-primary" id="createTaskId" type="submit">Submit</button>
         </div>
 
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
+<<<<<<< HEAD:public/createTask.html
+<script src="js/createTask.js"></script>
+=======
 
 
 <script type="text/javascript">
@@ -120,5 +121,6 @@
     });
 
 </script>
+>>>>>>> origin/test:public/create-task.html
 
 </html>
