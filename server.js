@@ -51,12 +51,13 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: false, save
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 
 
 // require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/login-routes.js")(app);
 require("./routes/task-routes.js")(app);
 

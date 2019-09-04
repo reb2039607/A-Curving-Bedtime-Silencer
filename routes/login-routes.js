@@ -1,4 +1,4 @@
-
+const path = require('path');
 const passport = require('passport');
 const db = require("../models");
 
@@ -6,7 +6,8 @@ module.exports = function(app) {
 
 app.get('/',
   function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/create-task.html"));
+    // HERE TOO!
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
 app.get('/login',
@@ -49,7 +50,8 @@ app.post('/auth', function(req, res) {
       if (response) {
           req.session.loggedin = true;
           req.session.username = username;
-          res.redirect('/create-task.html');
+          // THIS IS WHERE THE CHANGE HAPPENED!
+          res.redirect('/index.html');
       } else {
           res.send('Incorrect Username and/or Password!');
       }
