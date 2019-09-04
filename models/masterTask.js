@@ -27,7 +27,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     taskstatus: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "Pending"
     },
     skilllevel: {
       type: DataTypes.STRING,
@@ -39,7 +40,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     startdate: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
+      defaultValue: DataTypes.NOW
     },
     enddate: {
       type: DataTypes.DATE,

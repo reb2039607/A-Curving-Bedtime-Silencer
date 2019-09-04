@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../public/css/create-task.css">
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -21,7 +20,7 @@
 
         <h1 class="display-4 font-weight-bold">Free-Lance-></h1>
         <a id="logout" href="url">Log Out</a>
-        <p id="username">username</p>
+        <p id="username" value="jogeskolla">username</p>
         <img id="home" src="../public/baseline_home_black_18dp.png" alt="Home" width="20" height="20">
     </div>
 
@@ -64,7 +63,7 @@
 
         <div class="card-body">
             End Date:
-            <input class="form-control" id="enddate" type="text" placeholder="End Date">
+            <input class="form-control" id="enddate" type="date" placeholder="End Date">
         </div>
 
         <div class="card-body">
@@ -75,47 +74,14 @@
         <p>*Please fill out all fields</p>
 
         <div class="div">
-            <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+            <button class="btn btn-primary" id="createTaskId" type="submit">Submit</button>
         </div>
 
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
-
-
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-        $("#submit").on("click", function (event) {
-
-            event.preventDefault();
-
-            let taskCreate = {};
-            taskCreate.title = $("#title").val().trim();
-            taskCreate.skillsrequired = $("#skillsrequired").val().trim();
-            taskCreate.skilllevel = $("#skilllevel").val().trim();
-            taskCreate.taskduration = $("#taskduration").val().trim();
-            taskCreate.rewardpoints = $("#rewardpoints").val().trim();
-            taskCreate.enddate = $("#enddate").val().trim();
-            taskCreate.description = $("#description").val().trim();
-
-            $.post("/api/createtasks/", taskCreate)
-                .then(function (response) {
-                    console.log(response);
-                    alert("Challenge Created!");
-
-                    $("#title, #skillsrequired, #skilllevel, #taskduration, #rewardpoints, #enddate, #description").empty();
-
-                });
-        });
-
-
-    });
-
-</script>
+<script src="js/createTask.js"></script>
 
 </html>
