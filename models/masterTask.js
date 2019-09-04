@@ -40,13 +40,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     startdate: {
       type: DataTypes.DATE,
-<<<<<<< HEAD
       allowNull: false,
       defaultValue: DataTypes.NOW
-=======
-      defaultValue: DataTypes.NOW,
-      allowNull: false
->>>>>>> origin/test
     },
     enddate: {
       type: DataTypes.DATE,

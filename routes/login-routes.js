@@ -3,15 +3,8 @@ const db = require("../models");
 const path = require("path");
 
 module.exports = function(app) {
-<<<<<<< HEAD
   app.get("/", function(req, res) {
     res.render("index.html", { user: req.user });
-=======
-
-app.get('/',
-  function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/create-task.html"));
->>>>>>> origin/test
   });
 
   app.get("/login", function(req, res) {
@@ -54,7 +47,6 @@ app.get('/',
         if (response) {
           req.session.loggedin = true;
           req.session.username = username;
-<<<<<<< HEAD
           res.redirect("/createTask.html");
         } else {
           res.send("Incorrect Username and/or Password!");
@@ -63,12 +55,6 @@ app.get('/',
       });
     } else {
       res.send("Please enter Username and Password!");
-=======
-          res.redirect('/create-task.html');
-      } else {
-          res.send('Incorrect Username and/or Password!');
-      }
->>>>>>> origin/test
       res.end();
     }
   });
