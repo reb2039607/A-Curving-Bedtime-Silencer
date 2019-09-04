@@ -1,7 +1,6 @@
 const path = require('path');
 const passport = require('passport');
 const db = require("../models");
-const path = require("path");
 
 module.exports = function(app) {
 
