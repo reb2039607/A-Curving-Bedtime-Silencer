@@ -1,6 +1,6 @@
 var db = require("../models");
 module.exports = function(app) {
-  app.get("/", (req, res) => {
+  app.get("/api/alltasks/", (req, res) => {
     db.masterTask.findAll({}).then(function(allTasks) {
       res.json(allTasks);
     });
