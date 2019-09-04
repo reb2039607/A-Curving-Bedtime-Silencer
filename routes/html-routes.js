@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const db = require("../models");
 const path = require("path");
 
@@ -6,3 +7,5 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/createTask.html"));
   });
 };
+=======
+>>>>>>> origin/test

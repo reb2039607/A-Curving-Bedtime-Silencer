@@ -82,6 +82,45 @@
 
 
 </body>
+<<<<<<< HEAD:public/createTask.html
 <script src="js/createTask.js"></script>
+=======
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#submit").on("click", function (event) {
+
+            event.preventDefault();
+
+            let taskCreate = {};
+            taskCreate.title = $("#title").val().trim();
+            taskCreate.skillsrequired = $("#skillsrequired").val().trim();
+            taskCreate.skilllevel = $("#skilllevel").val().trim();
+            taskCreate.taskduration = $("#taskduration").val().trim();
+            taskCreate.rewardpoints = $("#rewardpoints").val().trim();
+            taskCreate.enddate = $("#enddate").val().trim();
+            taskCreate.description = $("#description").val().trim();
+            taskCreate.taskstatus = "pending";
+            taskCreate.userid = 1;
+            // taskCreate.startdate = "2019-08-29";
+
+            $.post("/api/createtasks/", taskCreate)
+                .then(function (response) {
+                    console.log(response);
+                    alert("Challenge Created!");
+
+                    $("#title, #skillsrequired, #skilllevel, #taskduration, #rewardpoints, #enddate, #description").empty();
+
+                });
+        });
+
+
+    });
+
+</script>
+>>>>>>> origin/test:public/create-task.html
 
 </html>
