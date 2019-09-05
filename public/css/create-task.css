@@ -1,0 +1,47 @@
+.jumbotron {
+    border-style: solid;
+    background-color: rgba(43, 43, 173, 0.795);
+    color: white;
+    margin: 0px 10% 20px 10%;
+    text-align: center;
+
+}
+
+#home {
+    float: right;
+    margin: 2px;
+}
+#logout {
+    float: right;
+    margin: 2px;
+}
+#username {
+    float: right;
+    margin: 2px;
+}
+
+.card-header {
+    border-color: rgba(43, 43, 173, 0.795);
+}
+
+.card {
+    border-style: solid;
+    border-color: rgba(43, 43, 173, 0.795);
+    margin: 0px 10% 15px 10%;
+}
+
+.btn{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: right;
+    background-color: rgba(43, 43, 173, 0.795);
+    border-color: rgba(43, 43, 173, 0.795);
+}
+
+.form-control {
+    border-color: rgba(43, 43, 173, 0.795);
+}
+
+.custom-select {
+    border-color: rgba(43, 43, 173, 0.795);
+}
