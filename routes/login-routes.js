@@ -4,22 +4,7 @@ const db = require("../models");
 
 module.exports = function(app) {
 
-app.get('/',
-  function(req, res) {
-    // HERE TOO!
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
-  app.get("/signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
-
-  app.post(
-    "/login",
+  app.post("/login",
     passport.authenticate("local", { failureRedirect: "/login.html" }),
     function(req, res) {
       res.redirect("/createTask.html");
@@ -65,14 +50,14 @@ app.get('/',
 
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.redirect("/login");
   });
 
   app.get(
     "/profile",
     require("connect-ensure-login").ensureLoggedIn(),
     function(req, res) {
-      res.render("profile", { user: req.user });
+      res.sendFile(path.join(__dirname, "../index.html"));
     }
   );
 };
