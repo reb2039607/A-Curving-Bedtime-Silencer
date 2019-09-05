@@ -1,7 +1,5 @@
 const mysql = require("mysql");
 const express = require("express");
-// const session = require('express-session');
-// const bodyParser = require('body-parser');
 const path = require("path");
 const passport = require("passport");
 const Strategy = require("passport-local").Strategy;
@@ -42,14 +40,6 @@ passport.deserializeUser(function(id, cb) {
 });
 
 const app = express();
-/*
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(session({
-    secret: 'secret',
-    resave: false,
-    saveUninitialized: false
-}));*/
-// The above is the same as the below
 
 app.use(require("morgan")("combined"));
 app.use(require("body-parser").urlencoded({ extended: true }));
@@ -64,10 +54,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use(express.static("public"));
 app.use(express.static(__dirname + '/public'));
-
-
 
 // require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
