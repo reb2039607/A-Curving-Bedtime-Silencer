@@ -6,28 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Free->Lance</title>
+    <title>Free-Lance-></title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Free->Lance</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            </ul>
-        </div>
-    </nav>
+<body id="main">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Profile</a>
+        <a href="#">All Challenges</a>
+        <a href="#">Create Challenge</a>
+        <a href="#">My Challenges</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Free->Lance</span>
+
     <div class="container">
         <div class="jumbotron">
             <h3 align="center">Challenge TITLE</h3>
             <hr>
             <div class="d-flex flex-row-reverse">
-                <div class="p-2">Task ID</div>
+                <div class="p-2">Challenge ID</div>
             </div>
             <form>
                 <div class="form-group">
@@ -36,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tasktime">Estimated completion time</label>
-                    <input class="form-control" id="tasktime" disabled>
+                    <input class="form-control" id="taskduration" disabled>
                 </div>
                 <div class="form-group">
                     <label for="rewardpoints">Reward Points</label>
@@ -58,7 +54,7 @@
                     <input class="form-control" id="skilllevel" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="userid">User Id</label>
+                    <label for="userid">User ID</label>
                     <input class="form-control" id="userid" disabled>
                 </div>                
                 <div class="form-group">
@@ -84,4 +80,5 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/menu.js"></script>
 </html>
