@@ -11,7 +11,8 @@ $.get("/")
 });
 
 function display(author) {
-
+    console.log("Author: " + author);
+    
     authorId = author || "";
     if (authorId) {
       authorId = "/?author_id=" + authorId;
@@ -44,27 +45,27 @@ function initializeRows() {
     newPostCard.addClass("card");
     const newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
-    var newPostTitle = $("<h2>");
-    var newStartDate = $("<small>");
-    var newPostAuthor = $("<h5>");
-    var newPostCardBody = $("<div>");
+    const newPostTitle = $("<h2>");
+    const newStartDate = $("<small>");
+    const newPostAuthor = $("<h5>");
+    const newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
-    var newPostBody = $("<p>");
-    var newPostDate = $("<p>");
-    var newSkillsRequired = $("<p>");
-    var newSkillLevel = $("<p>");
-    var newFLPoints = $("<p>");
-    var newTaskStatus = $("<p>"); 
+    const newPostBody = $("<p>");
+    const newPostDate = $("<p>");
+    const newSkillsRequired = $("<p>");
+    const newSkillLevel = $("<p>");
+    const newFLPoints = $("<p>");
+    const newTaskStatus = $("<p>"); 
 
     //Placing info inside each div
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.description);
     newStartDate.text(post.createdAt);
-    newPostAuthor.text(post.userid);
-    newSkillsRequired.text(post.skillsrequired);
-    newSkillLevel.text(post.skilllevel);
-    newFLPoints.text(post.rewardpoints);
-    newTaskStatus.text(post.taskstatus);
+    newPostAuthor.text(`Posted by ${post.userid}`);
+    newSkillsRequired.text(`Main Skill Needed: ${post.skillsrequired}`);
+    newSkillLevel.text(`Level ${post.skilllevel}`);
+    newFLPoints.text(`FL Points: ${post.rewardpoints}`);
+    newTaskStatus.text(`Current Status is ${post.taskstatus}`);
     newPostDate.append(newStartDate);
 
     //Placing title and User inside the Header
