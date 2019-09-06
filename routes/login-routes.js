@@ -35,12 +35,8 @@ module.exports = function(app) {
         if (response) {
           req.session.loggedin = true;
           req.session.username = username;
-
-console.log("here");
-
           // THIS IS WHERE THE CHANGE HAPPENED!
-          res.redirect('/index.html');
-          //return username;
+          res.redirect("http://localhost:8080/index.html?username="+username);
       } else {
           res.send('Incorrect Username and/or Password!');
       }
