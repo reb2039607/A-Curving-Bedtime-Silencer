@@ -20,6 +20,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
   app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
+    res.sendFile(path.join(__dirname, "../login.html"));
   });
 };
