@@ -35,8 +35,12 @@ module.exports = function(app) {
         if (response) {
           req.session.loggedin = true;
           req.session.username = username;
+
+console.log("here");
+
           // THIS IS WHERE THE CHANGE HAPPENED!
           res.redirect('/index.html');
+          //return username;
       } else {
           res.send('Incorrect Username and/or Password!');
       }
@@ -50,14 +54,14 @@ module.exports = function(app) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/login");
+    res.redirect("/login.html");
   });
 
   app.get(
     "/profile",
     require("connect-ensure-login").ensureLoggedIn(),
     function(req, res) {
-      res.sendFile(path.join(__dirname, "../index.html"));
+      res.render('/index.html', { username: req.user.username });
     }
   );
 };
