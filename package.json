@@ -4,8 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start":"node name_of_starting_script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
+  
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reb2039607/A-Curving-Bedtime-Silencer.git"
@@ -17,7 +21,6 @@
   },
   "homepage": "https://github.com/reb2039607/A-Curving-Bedtime-Silencer#readme",
   "dependencies": {
-
     "body-parser": "^1.19.0",
     "connect-ensure-login": "^0.1.1",
     "express": "^4.17.1",
