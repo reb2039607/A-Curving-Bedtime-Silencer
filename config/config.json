@@ -21,7 +21,7 @@
     "database": "mtgltt7kduoj84jo",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "use_env_variable": "mgs0iaapcj3p9srz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "JAWSDB_URL",
     "operatorsAliases": false
   }
 }
