@@ -20,37 +20,10 @@
 
     <div class="container">
     <!-- ALL THE CONTENT GOES HERE -->
-
-    <div class="row">
-        <div class="col-sm-10"></div>
-        <div class="col-sm-2 bacon"></div>
-    </div>
-
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/menu.js"></script>
-<script>
-    let searchParams = new URLSearchParams(window.location.search)
-    let param = searchParams.get('username');
-    console.log(param);
-
-    const display = $("<div>").addClass("user");
-    const bacon = $(".bacon");
-    const login = $("<a>").attr('href', 'login.html');
-        
-     if(param === null) {
-        login.text("Login");
-        display.append(login);
-        bacon.append(display);
-    } else {
-        login.text("Logout");
-        display.append(login);
-        display.text(param);
-        bacon.append(display);
-    }
-
- </script>
 </html>

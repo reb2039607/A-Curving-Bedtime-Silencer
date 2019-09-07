@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Free-Lance | Create Task</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../public/css/create-task.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body id="main"> <!-- Body id needs to be main -->
+    <div class="jumbotron">
+        <h1 class="display-4 font-weight-bold">Free-Lance-></h1>
+        <a id="logout" href="/login.html">Log Out</a>
+        <p id="username" value="jogeskolla">username</p>
+        <img id="home" src="../public/baseline_home_black_18dp.png" alt="Home" width="20" height="20">
+        
+        <div class="d-flex flex-row"> <!-- Menu starts here -->
+            <div class="p-2">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#">Profile</a>
+                    <a href="challenge-cards.html">All Challenges</a>
+                    <a href="#">Create Challenge</a>
+                    <a href="#">My Challenges</a>
+                </div>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu-></span>
+            </div>
+        </div> <!-- Menu ends here -->
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Create a Challenge*</h2>
+        </div>
+
+        <div class="card-body">
+            Title:
+            <input class="form-control" id="title" type="text" placeholder="Name Your Challenge">
+        </div>
+
+        <div class="card-body">
+            Skills Required:
+            <input class="form-control" id="skillsrequired" type="text" placeholder="List Skills Required Here">
+        </div>
+
+
+        <div class="card-body">
+            Skill Level:
+            <select class="custom-select" id="skilllevel">
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+            </select>
+        </div>
+
+        <div class="card-body">
+            Appx Challenge Time:
+            <input class="form-control" id="taskduration" type="text" placeholder="Time to Complete Challenge">
+        </div>
+
+        <div class="card-body">
+            FL Points:
+            <input class="form-control" id="rewardpoints" type="text" placeholder="Points To Be Earned">
+        </div>
+
+        <div class="card-body">
+            End Date:
+            <input class="form-control" id="enddate" type="date" placeholder="End Date">
+        </div>
+
+        <div class="card-body">
+            Description:
+            <textarea class="form-control" id="description" placeholder="Challenge Details" required></textarea>
+        </div>
+
+        <p>*Please fill out all fields</p>
+
+        <div class="div">
+            <button class="btn btn-primary" id="createTaskId" type="submit">Submit</button>
+        </div>
+
+    </div>
+    
+
+
+</body>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#submit").on("click", function (event) {
+
+            event.preventDefault();
+
+            let taskCreate = {};
+            taskCreate.title = $("#title").val().trim();
+            taskCreate.skillsrequired = $("#skillsrequired").val().trim();
+            taskCreate.skilllevel = $("#skilllevel").val().trim();
+            taskCreate.taskduration = $("#taskduration").val().trim();
+            taskCreate.rewardpoints = $("#rewardpoints").val().trim();
+            taskCreate.enddate = $("#enddate").val().trim();
+            taskCreate.description = $("#description").val().trim();
+            taskCreate.taskstatus = "pending";
+            taskCreate.userid = 1;
+            // taskCreate.startdate = "2019-08-29";
+
+            $.post("/api/createtasks/", taskCreate)
+                .then(function (response) {
+                    console.log(response);
+                    alert("Challenge Created!");
+
+                    $("#title, #skillsrequired, #skilllevel, #taskduration, #rewardpoints, #enddate, #description").empty();
+
+                });
+        });
+
+
+    });
+
+</script>
+
+<!-- All these files are required to make the menu work-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/menu.js"></script> <!-- Menu JS Required-->
+
+</html>
