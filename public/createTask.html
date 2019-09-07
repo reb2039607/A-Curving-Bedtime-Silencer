@@ -112,7 +112,7 @@
             taskCreate.userid = 1;
             // taskCreate.startdate = "2019-08-29";
 
-            $.post("/api/createtasks/", function(response){
+            $.post("/api/createtasks/", taskCreate, function(response) {
 
                 console.log(response);
                 alert("Challenge Created!");
