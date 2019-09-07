@@ -1,11 +1,9 @@
-const path = require('path');
-const passport = require('passport');
+const path = require("path");
+const passport = require("passport");
 const db = require("../models");
 
 module.exports = function(app) {
-
-app.get('/',
-  function(req, res) {
+  app.get("/", function(req, res) {
     // HERE TOO!
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
@@ -22,7 +20,7 @@ app.get('/',
     "/login",
     passport.authenticate("local", { failureRedirect: "/login.html" }),
     function(req, res) {
-      res.redirect("/createTask.html");
+      res.redirect("/taskCard.html");
     }
   );
 
@@ -51,15 +49,15 @@ app.get('/',
           req.session.loggedin = true;
           req.session.username = username;
           // THIS IS WHERE THE CHANGE HAPPENED!
-          res.redirect('/index.html');
-      } else {
-          res.send('Incorrect Username and/or Password!');
-      }
+          res.redirect("/index.html");
+        } else {
+          res.send("Incorrect Username and/or Password!");
+        }
+        res.end();
+      });
+    } else {
+      res.send("Please enter Username and Password!");
       res.end();
-    });
-  } else {
-    res.send("Please enter Username and Password!");
-    res.end();
     }
   });
 
