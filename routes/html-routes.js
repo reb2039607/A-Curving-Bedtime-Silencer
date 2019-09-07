@@ -3,11 +3,11 @@ const path = require("path");
 
 module.exports = function(app) {
   app.get("/createTask", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/createTask.html"));
+    res.sendFile(path.join(__dirname, "../public/taskCreate.html"));
   });
 
   app.get("/alltasks", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/allTask.html"));
+    res.sendFile(path.join(__dirname, "../public/taskCard.html"));
   });
 
   app.get("/login", function(req, res) {

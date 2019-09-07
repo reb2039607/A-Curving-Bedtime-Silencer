@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>taskCard</title>
+    <!-- Bootstrap CSS Link  -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- JQUERY Link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap Javascript and popper.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Free Lance --></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#challengecard">All Challenges</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./taskCreate.html">Create Challenge</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Challenges</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <button class="btn btn-primary" id="allchallenges">All Challenges</button>
+    <hr />
+    <div class="container-fluid">
+      <div id="wrapper" class="row"></div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                SkillsRequired: Mysql
+              </li>
+              <li class="list-group-item">Completion Date: 2019-09-06</li>
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-primary" id="acceptId">Accept</button>
+              <button type="button" class="btn btn-primary">
+                Active <span class="badge badge-light">9</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/Javascript">
+    $(document).ready(function(event){
+     console.log(event);
+
+     $("#allchallenges").on('click',function(eventObj){
+        eventObj.preventDefault();
+        console.log("Welcome to all Challenges");
+
+        $.get("/api/alltasks/",function(resObj){
+            console.log(resObj);
+            resObj.forEach(function(element){
+                const taskCardcardheader=$("<div>");
+            taskCardcardheader.addClass("card-header");
+            taskCardcardheader.append(element.title)
+            const taskCardcol=$("<div>");
+            taskCardcol.addClass("col-md-4 col-sm-6");
+           const taskCardcard=$("<div>");
+                taskCardcard.addClass("card");
+            const taskCardbody=$("<div>");
+                    taskCardbody.addClass("card-body");
+            // const taskCardbodyh5=$("<h5>");
+            // taskCardbodyh5.addClass("card-title");
+            // taskCardbodyh5.text(element.title);
+            const taskCardbodyp=$("<p>");
+                    taskCardbodyp.addClass("card-text");
+                    taskCardbodyp.text(element.description);
+
+        const taskCardbodyul=$("<ul>");
+                taskCardbodyul.addClass("list-group");
+                taskCardbodyul.addClass("list-group-flush");
+                taskCardbodyul.append('<li class="list-group-item">SkillsRequired:' + element.skillsrequired + "</li>"
+                + '<li class="list-group-item">Completion Date:' + element.enddate + "</li>");
+
+                const taskCardbody2=$("<div>");
+     taskCardbody2.addClass("card-body");
+     taskCardbody2.append($("<button>").attr({ id: "acceptId" + element.id,
+           class:"btn btn-primary d-inline acceptedButtons"
+
+         }).css({ "margin-right": "5px"}).text("Accept"));
+
+         taskCardbody2.append($("<button>").attr({
+           class:"btn btn-primary"
+         }).text("Lancers").append('<span class="badge badge-light">9</span>')
+         );
+            $("#wrapper").append(taskCardcol.append(taskCardcard.append(taskCardcardheader,taskCardbody.append(taskCardbodyp,taskCardbodyul),taskCardbody2)));
+
+            });
+        });
+     });
+
+    });
+  </script>
+</html>

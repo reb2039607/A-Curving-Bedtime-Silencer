@@ -6,8 +6,15 @@ module.exports = function(app) {
     });
   });
   app.post("/api/createtasks/", function(req, res) {
-    db.masterTask.create(req.body).then(function(task) {
-      res.json(task);
-    });
+    console.log(req.route);
+    console.log(req.body);
+    db.masterTask
+      .create(req.body)
+      .then(function(task) {
+        res.json(task);
+      })
+      .catch(function(err) {
+        res.json("Challenge Creation failed!");
+      });
   });
 };

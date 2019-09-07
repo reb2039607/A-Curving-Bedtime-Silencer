@@ -19,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     rewardpoints: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 100
     },
     skillsrequired: {
       type: DataTypes.STRING,
