@@ -10,6 +10,10 @@ $.get("/")
     display();
 });
 
+
+
+
+
 function display(author) {
     console.log("Author: " + author);
     
@@ -56,6 +60,11 @@ function initializeRows() {
     const newSkillLevel = $("<p>");
     const newFLPoints = $("<p>");
     const newTaskStatus = $("<p>"); 
+    const acceptBtn = $("<button>");
+    acceptBtn.addClass("btn btn-primary");
+    acceptBtn.attr("id", "accept"+post.id);
+    acceptBtn.attr("value", post.id);
+    acceptBtn.attr("onClick", "something("+post.id+")");
 
     //Placing info inside each div
     newPostTitle.text(post.title + " ");
@@ -67,6 +76,7 @@ function initializeRows() {
     newFLPoints.text(`FL Points: ${post.rewardpoints}`);
     newTaskStatus.text(`Current Status is ${post.taskstatus}`);
     newPostDate.append(newStartDate);
+    acceptBtn.text("Accept Challenge");
 
     //Placing title and User inside the Header
     newPostCardHeading.append(newPostTitle);
@@ -79,6 +89,7 @@ function initializeRows() {
     newPostCardBody.append(newTaskStatus);
     newPostCardBody.append(newFLPoints);
     newPostCardBody.append(newPostDate);
+    newPostCardBody.append(acceptBtn);
 
     //Placing the Card Header and Card Body into the actual Card
     newPostCard.append(newPostCardHeading);

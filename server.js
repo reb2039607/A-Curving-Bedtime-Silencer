@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 
 passport.use(
   new Strategy(function(username, password, cb) {
-    db.users.findOne(username, function(err, user) {
+    db.User.findOne(username, function(err, user) {
       if (err) {
         return cb(err);
       }
@@ -31,7 +31,7 @@ passport.serializeUser(function(user, cb) {
 });
 
 passport.deserializeUser(function(id, cb) {
-  db.users.findById(id, function(err, user) {
+  db.User.findById(id, function(err, user) {
     if (err) {
       return cb(err);
     }
@@ -56,7 +56,7 @@ app.use(passport.session());
 
 app.use(express.static(__dirname + '/public'));
 
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/login-routes.js")(app);
 require("./routes/task-routes.js")(app);

@@ -6,7 +6,7 @@
 //show username on screen
 $.get("/profile")
 .then(function (response) {
-    // console.log(response);
+    console.log(response);
     // const username = req.session.username
     // alert("Welcome " + username + "!");
     loggedIn();
@@ -37,8 +37,10 @@ function loggedIn(user) {
         for (let i = 0; i < data.length; i++) {
             if (i === $("#username").val()) {
                 const showUsername = $("<h3>");
-                showUsername.text("Welcome " + data[i].fullname + "!");
+                showUsername.text("Welcome " + data[3].fullname + "!");
                 $("#user").append(showUsername);
+                console.log(`Showing username ${showUsername}`);
+                
             }
             else {
                 console.log("404 (NOT FOUND) ERROR");

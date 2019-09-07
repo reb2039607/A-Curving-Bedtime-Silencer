@@ -4,22 +4,7 @@ const db = require("../models");
 
 module.exports = function(app) {
 
-app.get('/',
-  function(req, res) {
-    // HERE TOO!
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
-  app.get("/signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
-
-  app.post(
-    "/login",
+  app.post("/login",
     passport.authenticate("local", { failureRedirect: "/login.html" }),
     function(req, res) {
       res.redirect("/createTask.html");
@@ -51,7 +36,7 @@ app.get('/',
           req.session.loggedin = true;
           req.session.username = username;
           // THIS IS WHERE THE CHANGE HAPPENED!
-          res.redirect('/index.html');
+          res.redirect("http://localhost:8080/index.html?username="+username);
       } else {
           res.send('Incorrect Username and/or Password!');
       }
@@ -65,14 +50,14 @@ app.get('/',
 
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.redirect("/login.html");
   });
 
   app.get(
     "/profile",
     require("connect-ensure-login").ensureLoggedIn(),
     function(req, res) {
-      res.render("profile", { user: req.user });
+      res.render('/index.html', { username: req.user.username });
     }
   );
 };
