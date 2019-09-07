@@ -23,13 +23,13 @@
                     <img id="home" src="baseline_home_black_18dp.png" alt="Home" width="20" height="20">
                 </div>
     </nav>
-
+<div class="container">
     <div class="search"></div>
     <div class="display">
-        <div class="row">
-            <div class="col-sm-4 challenge">
-            </div>
+        <div class="row challenge">
         </div>
+    </div>
+
     </div>
 
     <footer></footer>
@@ -43,6 +43,14 @@
 function something(id){
     console.log(id);
 }
+function acceptTask(id, user, start, end) {
+    console.log(id);
+    
+    $.post("/api/task/usertask/"+id, function(data) {
+      console.log("Accept Task", data);
+      
+    });
+  };
 
 </script>
 

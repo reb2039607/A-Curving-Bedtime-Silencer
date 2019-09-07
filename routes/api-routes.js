@@ -57,6 +57,38 @@ app.get("/api/user/:id", function(req, res) {
     });
   });
 
+  app.get("/api/task/usertask/:usertask", function(req, res) {
+    db.userTask.findAll({
+        where: {
+            taskid: req.params.taskid
+        }
+    }).then(function(dbMTask) {
+      res.json(dbMTask);
+    });
+  });
 
+  app.post("/api/task/usertask/:usertask", function(req, res) {
+    db.userTask.create({
+      userid: req.body.userid,
+      taskid: req.body.taskid,
+      actualstartDate: req.body.actualstartDate,
+      actualendDate: req.body.actualendDate,
+    }).then(function(dbMTask) {
+      res.json(dbMTask);
+    });
+  });
+
+  app.put("/api/task/usertask/:usertask", function(req, res) {
+    db.userTask.update({
+      userid: req.body.userid,
+      taskstatus: "accepted"
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbMTask) {
+      res.json(dbMTask);
+    });
+  });
 
 }

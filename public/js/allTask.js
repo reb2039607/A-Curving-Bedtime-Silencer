@@ -45,6 +45,8 @@ function initializeRows() {
   function createNewRow(post) {
 
     //Creating the divs for each part of the Challenge card
+    const taskCardcol=$("<div>");
+    taskCardcol.addClass("col-md-4 col-sm-6");
     const newPostCard = $("<div>");
     newPostCard.addClass("card");
     const newPostCardHeading = $("<div>");
@@ -60,12 +62,17 @@ function initializeRows() {
     const newSkillLevel = $("<p>");
     const newFLPoints = $("<p>");
     const newTaskStatus = $("<p>"); 
+
     const acceptBtn = $("<button>");
     acceptBtn.addClass("btn btn-primary");
     acceptBtn.attr("id", "accept"+post.id);
     acceptBtn.attr("value", post.id);
-    acceptBtn.attr("onClick", "something("+post.id+")");
+    const start = post.startdate;
+    const end = post.enddate;
+    acceptBtn.attr("onClick", "acceptTask("+post.id, post.userid, start, end+")");
 
+    // console.log("Task Id: " + post.id);
+    
     //Placing info inside each div
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.description);
@@ -95,11 +102,14 @@ function initializeRows() {
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
     newPostCard.data("post", post);
+    taskCardcol.append(newPostCard);
 
-    return newPostCard;
+    return taskCardcol;
 
 
   }
+
+
 
 });
 
